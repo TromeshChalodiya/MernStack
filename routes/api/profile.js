@@ -3,7 +3,7 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
-const { check, validationResult } = require('express-validator/check');
+const { check, validationResult } = require('express-validator');
 
 // @route GET api/profile/me
 // @desc  Get current user profile
@@ -64,22 +64,22 @@ router.post(
     const profileFields = {};
     profileFields.user = req.user.id;
     if (company) profileFields.company = company;
-    if (company) profileFields.website = website;
-    if (company) profileFields.location = location;
-    if (company) profileFields.bio = bio;
-    if (company) profileFields.status = status;
-    if (company) profileFields.githubusername = githubusername;
+    if (website) profileFields.website = website;
+    if (location) profileFields.location = location;
+    if (bio) profileFields.bio = bio;
+    if (status) profileFields.status = status;
+    if (githubusername) profileFields.githubusername = githubusername;
     if (skills) {
       profileFields.skills = skills.split(',').map((skill) => skill.trim());
     }
 
     // Build Social object
     profileFields.social = {};
-    if (company) profileFields.social.youtube = youtube;
-    if (company) profileFields.social.facebook = facebook;
-    if (company) profileFields.social.twitter = twitter;
-    if (company) profileFields.social.instagram = instagram;
-    if (company) profileFields.social.linkedin = linkedin;
+    if (youtube) profileFields.social.youtube = youtube;
+    if (facebook) profileFields.social.facebook = facebook;
+    if (twitter) profileFields.social.twitter = twitter;
+    if (instagram) profileFields.social.instagram = instagram;
+    if (linkedin) profileFields.social.linkedin = linkedin;
 
     try {
       let profile = await Profile.findOne({ user: req.user.id });
@@ -97,7 +97,7 @@ router.post(
 
       // Create
       profile = new Profile(profileFields);
-      await Profile.save();
+      await profile.save();
       res.json(profile);
     } catch (err) {
       console.log(err.message);
@@ -105,5 +105,42 @@ router.post(
     }
   }
 );
+
+// @route Get api/profile
+// @desc  Get all profiles
+// @access Public
+
+router.get('/', async (req, res) => {
+  try {
+    const profiles = await Profile.find().populate('user', ['name', 'avatar']);
+    res.json(profiles);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route Get api/profile/:user_id
+// @desc  Get profile by user ID
+// @access Public
+
+router.get('/user/:user_id', async (req, res) => {
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id,
+    }).populate('user', ['name', 'avatar']);
+
+    if (!profile) {
+      return res.status(400).json({ msg: 'Profile not found' });
+    }
+    res.json(profile);
+  } catch (error) {
+    console.log(error.message);
+    if (error.kind == 'ObjectId') {
+      return res.status(400).json({ msg: 'Profile not found' });
+    }
+    res.status(500).send('Server Error');
+  }
+});
 
 module.exports = router;
