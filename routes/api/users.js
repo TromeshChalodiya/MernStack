@@ -66,7 +66,7 @@ router.post(
           id: user.id,
         },
       };
-      console.log(config.get('jwtToken'), 'this is the payload');
+
       jwt.sign(
         payload,
         config.get('jwtToken'),
