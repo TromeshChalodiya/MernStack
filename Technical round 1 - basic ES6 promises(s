@@ -1,0 +1,168 @@
+Technical round 1 - basic ES6 promises(syntax,uses),async/await,call/apply/bind,diff. 
+display and visibility, position css , 
+some outputs questions.
+
+1st, Purely ES6 Qs were asked. (Depth knowledge of JS is needed here). 
+Little bit of HTML,CSS, Bootstrao, ANgular 8 was asked here.
+
+Asked Basic questions like CSS selector, Callback, Promise, box model in css, semantic elements, 
+user strict in js, What is Doctype, Async/Await, CSS Specificity
+
+CSS:
+How do you center the div center horizontally and vertically.
+Css box model, Display and Position property.
+Css Specificity and how to calculate.
+
+Javascript:
+what is the difference bet. normal function and Arrow function
+array.map method.
+diff. let, var, const.
+how to create object in JS.
+object.seal and freeze method
+Event Propagation in js.
+IIFE
+what is prototype and how to achieve inheritance in JS.
+array methods[sort, slice, splice, reverse, split, join]
+
+
+What happens when you type a URL in browser?
+How can we create routing without any framework with pure Javascript
+How can we vertically align a 400 px div in CSS?
+Do you have any experience with deployment of website or application on a server?
+
+Do you iterate over previous projects? 
+What Front End Developer newsletters do you sign up to? Tell me about React Life Cycle Methods.
+
+
+what is Type in jS
+Loops in JS
+Suedo code in css
+js hoisting
+data storage of JS cookies cache
+HTML5 and HTML difference
+Svg vs Canvas
+let var const
+angular vs react(which is good and why)
+array methods
+set maps
+== vs ===
+is Doctype important in HTML
+Check if string contain all characters unique of not 'a duplication or repetition of a surgical operation,
+
+
+
+inheritance in javascript
+how to count the no of letters in the word hello
+factorial of a number
+difference call bind apply internally
+
+What is a Closure? -->
+A closure is an inner function that has access to the outer (enclosing) function's variables—scope chain. 
+The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), 
+it has access to the outer function's variables, and it has access to the global variables
+
+
+What is the difference between display: block; and display: inline; --->
+display: block means that the element is displayed as a block, as paragraphs. 
+a line break happens after the element, so a block element doesn’t sit next to other element.
+
+display: inline means that the element is displayed inline, inside the current block on the same line.
+
+Closure, ES6 concepts, ReactJS basics, and other usual JS topics
+
+
+open console and then write vanila js codes in which they asked about loops , 
+Objects, keys, closures, scopes in the written code itself.
+Problems of outputs.
+
+
+Basic JavaScript , HTML and CSS questions like..
+How to center align a div using CSS ?
+What is a box model ?
+How do you negate a box model ?
+Css position attributes
+What is doctype?
+What is local storage in Html 5 ?
+
+
+
+<script anguage="javascript" type="text/javascript"> 
+<!-- location.href='http://newhost/newpath.newpage.html' //-->
+</script>
+
+// below is the Generic Object
+let I = new Object()
+
+// How object prop assign
+obj['class'] = 12
+obj.class  = 12
+
+
+alert(document.getElementById('newId').checked)
+
+document.cookie = 'key1 = val1, key2 = val2, key3 = val3';
+
+let unique_array = Array.from(set(array))
+
+@media only screen and (min-width: 768px) {
+  body{
+    font-size: 1.5rem
+  }
+}
+
+
+How to center div using css2 and css3?
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+The best qualities of good leaders are:
+
+Vision
+Courage
+Integrity
+Humility
+Strategic planning
+Focus
+Cooperation
+
+
+What are the limitations of CSS?
+Limitations are:
+Ascending by selectors is not possible
+Limitations of vertical control
+No expressions
+No column declaration
+Pseudo-class not controlled by dynamic behavior
+Rules, styles, targeting specific text not possible
+
+
+SDLC lifecycle
+
+1. Planning
+2. Define Requirements
+3. Design and Prototyping
+  Architecture
+  User Interface
+  Platforms
+  Programming
+  Communications
+  Security
+4. Software development
+5. Testing
+6. Deployment
+7. Operations and Maintenance
+
+const emaployess = [
+  {id: 100, name: 'Mikel', managerId: 100},
+  {id: 200, name: 'Mikel', managerId: 100},
+  {id: 300, name: 'Mikel', managerId: 100},
+  {id: 400, name: 'Mikel', managerId: 100},
+]
+
+
+getManagers(employee, 400) => [200, 100]
+
