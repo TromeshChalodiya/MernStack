@@ -135,7 +135,6 @@ router.put('/like/:id', auth, async (req, res) => {
 router.put('/unlike/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-    console.log('this is from the unlike post', post);
     // Check if the post has been already liked
     if (
       post.likes.filter((like) => like.user.toString() === req.user.id)
@@ -186,12 +185,10 @@ router.post(
       };
 
       post.comments.unshift(newComment);
-
       await post.save();
 
       res.json(post.comments);
     } catch (error) {
-      console.log(error.message);
       res.status(500).send('Server Error');
     }
   }
